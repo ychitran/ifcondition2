@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="result"></p>
+    <script>
+        let num = parseInt(prompt("Nhập số điện gia đình tiêu thụ"));
+
+        function kwh(num) {
+            if (num < 0) {
+                return (document.getElementById("result").innerHTML =
+                    "Không tính được giá điện");
+            } else if (num < 51) {
+                return num * 1678;
+            } else if (num < 101) {
+                return 53400 + (num - 50) * 1734;
+            } else if (num < 201) {
+                return 53400 + 84966 + (num - 100) * 2014;
+            } else if (num < 301) {
+                return 53400 + 84966 + 199368 + (num - 200) * 2536;
+            } else if (num < 401) {
+                return 53400 + 84966 + 199368 + 251064 + (num - 300) * 2834;
+            } else {
+                return 53400 + 84966 + 199368 + 251064 + 280566 + (num - 400) * 2927;
+            }
+        }
+        //result
+        document.getElementById("result").innerHTML =
+            "Tiền điện của bạn tháng này là " + kwh(num) + " nghìn đồng";
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="result"></p>
+    <script>
+        let a = parseInt(prompt("Nhập số a vào đây"));
+        let b = parseInt(prompt("Nhập số b vào đây"));
+        let c = parseInt(prompt("Nhập số c vào đây"));
+        let delta = Math.pow(b, 2) - 4 * a * c;
+        let sqrtdelta = Math.sqrt(delta);
+        if (delta < 0) {
+            document.getElementById("result").innerHTML = "Phương trình vô nghiệm";
+        } else if ((delta = 0)) {
+            document.getElementById("result").innerHTML =
+                "Phương trình có nghiệp kép: x1 = x2 = " + -b / (2 * a);
+        } else {
+            document.getElementById("result").innerHTML =
+                "Phương trình có 2 nghiệm phân biệt x1 = " +
+                (-b - sqrtdelta) / (2 * a) +
+                " và x2 = " +
+                (-b + sqrtdelta) / (2 * a);
+        }
+    </script>
+</body>
+
+</html>
